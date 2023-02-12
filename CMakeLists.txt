@@ -25,6 +25,7 @@ find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIRS})
 find_package(JPEG REQUIRED)
 include_directories(${JPEG_INCLUDE_DIR})
+find_package(vpi REQUIRED)
 
 # ************ DEMO ****************
 # add exe
@@ -36,6 +37,7 @@ include_directories(${JPEG_INCLUDE_DIR})
 # target_link_libraries(demo -lpthread -lm)     # multi-threads
 # target_link_libraries(demo nvinfer cudart)    # tensorrt
 # target_link_libraries(demo ${OpenCV_LIBS})    # opencv
+# target_link_libraries(demo vpi)               # vpi
 # ************ DEMO ****************
 
 # MainBody:
