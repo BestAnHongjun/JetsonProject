@@ -14,7 +14,7 @@ void UDPReceiver::init(const int recv_port, uint16_t pack_size)
     }
 
     struct timeval timeout = {UDP_TIMEOUT, 0};
-    int ret = setsockopt(fd, SOL_SOCKET, SO_SNDTIMEO, (const char*)&timeout, sizeof(timeout));
+    int ret = setsockopt(fd, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout));
     if (ret < 0)
     {
         std::cout << "Set timeout fail at " << ERR_INFO << std::endl;
