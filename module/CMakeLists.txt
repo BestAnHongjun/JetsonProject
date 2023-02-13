@@ -35,3 +35,11 @@ if (${UDP_SWITCH} STREQUAL "ON")
     include_directories(udp)
     add_subdirectory(udp)
 endif()
+
+# OpenCV Module
+set (OPENCV_SWITCH    "ON")
+set (OPENCV_EXAMPLE   "ON")
+if (${OPENCV_SWITCH} STREQUAL "ON")
+    include_directories(opencv)
+    add_subdirectory(opencv)
+endif()
