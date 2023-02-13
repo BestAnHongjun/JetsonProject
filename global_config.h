@@ -10,6 +10,12 @@
 #define UDP_QUE_SIZE    1000
 #define UDP_TIMEOUT     3
 
+// Realsense Camera
+#define REALSENSE_WIDTH     640
+#define REALSENSE_HEIGHT    480
+#define REALSENSE_FPS       30
+#define REALSENSE_QUE_SIZE  5
+
 /*********** For Debug ***********/
 #define TIMER_SWITCH    1
 #define UDP_SWITCH      0
