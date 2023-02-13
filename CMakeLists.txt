@@ -15,7 +15,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 # Set include dir
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/module)
 
 # Set 3rdParty packages
 find_package(CUDA REQUIRED)
@@ -27,6 +26,8 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 find_package(JPEG REQUIRED)
 include_directories(${JPEG_INCLUDE_DIR})
 find_package(vpi REQUIRED)
+
+add_subdirectory(module)
 
 # ************ DEMO ****************
 # add exe

@@ -20,14 +20,16 @@ class Timer
 private:
     double all_time = 0;
     double count = 0;
+    uint32_t count_n = 20;
     size_t once_time = 0;
     std::string name;
     std::chrono::_V2::system_clock::time_point start_time, end_time;
     
 public:
-    Timer(std::string name)
+    Timer(std::string name, uint32_t count_n=20)
     {
         this->name = name;
+        this->count_n = count_n;
     }
 
     void start()
@@ -41,7 +43,7 @@ public:
         once_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
         count += 1;
         all_time += once_time;
-        if (int(count) % TIMER_COUNT == 0) output();
+        if (int(count) % count_n == 0) output();
     }
 
     void output()
