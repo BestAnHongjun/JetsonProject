@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 project(bufqueue_modules)
 
-add_library(bufqueue bufqueue.cpp)
+add_library(bufqueue SHARED bufqueue.cpp)
 target_link_libraries(bufqueue)
 
 if (${GLOBAL_EXAMPLE} STREQUAL "ON" AND ${BUFQUEUE_EXAMPLE} STREQUAL "ON")

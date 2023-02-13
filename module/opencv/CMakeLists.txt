@@ -4,7 +4,7 @@ project(opencv_modules)
 find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-add_library(opencv opencv.cpp)
+add_library(opencv SHARED opencv.cpp)
 target_link_libraries(opencv ${OpenCV_LIBS})
 
 if (${GLOBAL_EXAMPLE} STREQUAL "ON" AND ${OPENCV_EXAMPLE} STREQUAL "ON")

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 project(udp_modules)
 
-add_library(udp udp_sender.cpp udp_receiver.cpp)
+add_library(udp SHARED udp_sender.cpp udp_receiver.cpp)
 target_link_libraries(udp pthread bufqueue)
 
 if (${GLOBAL_EXAMPLE} STREQUAL "ON" AND ${UDP_EXAMPLE} STREQUAL "ON")
