@@ -94,6 +94,11 @@ void IMGReceiver::recv_func()
         std::vector<uint8_t> buffer(head.buffer, head.buffer + head.size);
         cv::Mat mat = cv::imdecode(buffer, CV_LOAD_IMAGE_COLOR);
         delete[] head.buffer;
+        if (mat.empty()) 
+        {
+            lost += 1;
+            continue;
+        }
         double total_delay = head.delay + trans_delay;
         callback(mat, total_delay, (double)lost / recv);
     }
