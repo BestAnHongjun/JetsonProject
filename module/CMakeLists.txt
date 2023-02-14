@@ -43,3 +43,11 @@ if (${OPENCV_SWITCH} STREQUAL "ON")
     include_directories(opencv)
     add_subdirectory(opencv)
 endif()
+
+# Realsense Camera Module
+set (REALSENSE_SWITCH    "ON")
+set (REALSENSE_EXAMPLE   "ON")
+if (${REALSENSE_SWITCH} STREQUAL "ON")
+    include_directories(realsense_camera)
+    add_subdirectory(realsense_camera)
+endif()
