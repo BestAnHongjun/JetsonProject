@@ -31,5 +31,5 @@ void IMGSender::push(cv::Mat image)
 {
     std::vector<uint8_t> buffer;
     MatToJpgBuffer(image, buffer, jpg_quality);
-    udp_sender.send((uint8_t*)&buffer, buffer.size());
+    udp_sender.send((uint8_t*)&buffer[0], buffer.size());
 }

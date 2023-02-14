@@ -9,7 +9,7 @@ void call_back(cv::Mat mat, double delay, double lost_rate)
 
 int main()
 {
-    IMGReceiver img_receiver(8889, "192.168.137.97", 8888, call_back);
+    IMGReceiver img_receiver(8888, "192.168.137.97", 8889, call_back);
     while (1);
     return 0;
 }
