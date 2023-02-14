@@ -78,7 +78,7 @@ void UDPReceiver::work()
 void UDPReceiver::recv(RecvHead &recv_head)
 {
     int count = 0, ret;
-    double current_time, delay;
+    double delay;
     struct sockaddr_in clent_addr;
     socklen_t len = sizeof(clent_addr);
 
@@ -91,8 +91,11 @@ start_recv:
         return;
     }
     
+    struct timeval tp;
+    gettimeofday(&tp, NULL);
+    double t1 = (double)tp.tv_sec * 1e3 + (double)tp.tv_usec * 1e-3;
+
     UDPHead* head = (UDPHead*)buffer;
-    double time = (double)(*head).tv.tv_sec * 1e3 + (double)(*head).tv.tv_usec * 1e-3;
     uint16_t id = (*head).id;
     if (id != 1) goto start_recv;
     uint16_t total = (*head).total;
@@ -125,10 +128,9 @@ start_recv:
         memcpy(recv_buf + (i - 1) * pack_size, buffer + sizeof(UDPHead), size);
     }
 
-    struct timeval tp;
     gettimeofday(&tp, NULL);
-    current_time = (double)tp.tv_sec * 1e3 + (double)tp.tv_usec * 1e-3;
-    delay = current_time - time;
+    double t2 = (double)tp.tv_sec * 1e3 + (double)tp.tv_usec * 1e-3;
+    delay = t2 - t1;
     UDP_DEBUG(printf("Total delay: %.6lf ms, size=%d\n", delay, count));
 
     recv_head.delay = delay;
