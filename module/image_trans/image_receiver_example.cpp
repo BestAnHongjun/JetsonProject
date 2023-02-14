@@ -8,7 +8,7 @@ void call_back(cv::Mat mat, double delay, double lost_rate)
 {
     printf("Recv %ld bytes, delay:%.5lf ms, lost_rate: %.2lf% \n", mat.rows * mat.step[0], delay, lost_rate * 100);
     cv::imshow(win, mat);
-    cv::waitKey(10);
+    cv::waitKey(1);
 }
 
 int main()

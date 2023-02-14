@@ -10,6 +10,9 @@ if (${GLOBAL_EXAMPLE} STREQUAL "ON" AND ${IMAGETRANS_EXAMPLE} STREQUAL "ON")
 
     add_executable(image_receiver_example image_receiver_example.cpp)
     target_link_libraries(image_receiver_example image_trans)
+
+    add_executable(realsense_sender_example realsense_sender_example.cpp)
+    target_link_libraries(realsense_sender_example image_trans realsense_camera)
 endif()
 
 set (IMAGETRANSLIB image_trans)

@@ -11,8 +11,8 @@
 #define UDP_TIMEOUT     3
 
 // Realsense Camera
-#define REALSENSE_WIDTH     640
-#define REALSENSE_HEIGHT    480
+#define REALSENSE_WIDTH     1280
+#define REALSENSE_HEIGHT    720
 #define REALSENSE_FPS       30
 #define REALSENSE_QUE_SIZE  5
 
