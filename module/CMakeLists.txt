@@ -51,3 +51,11 @@ if (${REALSENSE_SWITCH} STREQUAL "ON")
     include_directories(realsense_camera)
     add_subdirectory(realsense_camera)
 endif()
+
+# Image-Trans Camera Module
+set (IMAGETRANS_SWITCH    "ON")
+set (IMAGETRANS_EXAMPLE   "ON")
+if (${IMAGETRANS_SWITCH} STREQUAL "ON")
+    include_directories(image_trans)
+    add_subdirectory(image_trans)
+endif()

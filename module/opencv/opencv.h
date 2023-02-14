@@ -7,6 +7,7 @@
 #include <opencv2/opencv.hpp>
 #include<opencv2/highgui/highgui.hpp>
 #include <opencv2/highgui/highgui_c.h>
+#include <opencv2/imgcodecs/legacy/constants_c.h>
 
 void MatToJpgBuffer(const cv::Mat mat, std::vector<uint8_t>& buff, int quality=95);
 
